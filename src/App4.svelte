@@ -1,4 +1,6 @@
 <script>
+	import Modal from "./Modal.svelte";'./Modal.svelte';
+
 	let people = [
 		{name: "Yoshi", beltColour: "black", age: 25, id: 1}, 
 		{name: "Mario", beltColour: "orange", age: 45, id: 2}, 
@@ -13,14 +15,15 @@
 	let num = 1;
 </script>
 
-{#if num > 20}
+<!-- {#if num > 20}
 	<p>Greater than 20</p>
 {:else if num > 5}
 	<p>Greater than 5</p>
 {:else}
 	<p>Not greater than 5</p>
-{/if}
+{/if} -->
 
+<Modal /> <!-- 引入Modal -->
 <main>
 	{#each people as person (person.id)} <!-- person代表 陣列裡的每一個人-->
 		<div>
