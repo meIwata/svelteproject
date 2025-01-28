@@ -1,5 +1,17 @@
 <script>
-	let name = "Yoshi";
+	// let name = "Yoshi";
+	let firstname = "Emily";
+	let lastname = "Smith";
+
+	$: fullName = `${firstname} ${lastname}`;
+	
+	// 可以在console印出看看
+	// $: console.log(beltColour);
+	$: {
+		console.log(beltColour);
+		console.log(fullName);
+	}
+
 	let beltColour = "black"
 
 	const handleClick = () => {
@@ -12,15 +24,20 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<!-- <h1>Hello {name}!</h1> -->
 
 	<!-- 也可以把顏色在style裡面 -->
-	<p style="color: {beltColour};">{beltColour} belt</p>
-	<button on:click={handleClick}>update belt colour</button>
+	<!-- <p style="color: {beltColour};">{beltColour} belt</p> -->
+	<!-- <button on:click={handleClick}>update belt colour</button> -->
+
+	<p>{fullName} - {beltColour} belt</p>
 
 	<!-- Data Binding -->
 	<!-- <input type="text" on:input={handleInput} value={beltColour}> -->
-	 <input type="text" bind:value={beltColour}>
+
+	<input type="text" bind:value={firstname}>
+	<input type="text" bind:value={lastname}>
+	<input type="text" bind:value={beltColour}>
 </main>
 
 <style>
