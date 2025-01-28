@@ -23,7 +23,10 @@
 	<p>Not greater than 5</p>
 {/if} -->
 
-<Modal /> <!-- 引入Modal -->
+
+<!-- 引入Modal，message是props，這裡的isPromo={true}會覆蓋Modal.svelte裡面的內容 -->
+<!-- <Modal message = "Hey, I am a prop value" isPromo={true} /> -->
+<Modal message = "hey there again" />
 <main>
 	{#each people as person (person.id)} <!-- person代表 陣列裡的每一個人-->
 		<div>
