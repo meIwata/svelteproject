@@ -1,5 +1,6 @@
 <script>
 	import Modal from "./Modal.svelte";'./Modal.svelte';
+	import AddPersonForm from "./AddPersonForm.svelte";
 
 	let showModal = false;
 
@@ -15,20 +16,13 @@
 
 	const handleClick = (id)=>{
 		// delete the person from people
-		people = people.filter((person)=> person.id != id)
+		people = people.filter((person)=> person.id != id);
 	}
 
-	let num = 1;
 </script>
 
 <Modal {showModal} on:click={toggleModal}>
-	<h3>Add a New Person</h3>
-	<form>
-		<input type="text" placeholder="name">
-		<input type="text" placeholder="belt colour">
-		<button>Add Person</button>
-	</form>
-
+	<AddPersonForm />
 </Modal>
 <main>
 	<button on:click|once={toggleModal}>Open Modal</button> <!-- 只能啟動一次 -->
