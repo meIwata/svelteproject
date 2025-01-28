@@ -1,5 +1,5 @@
 <script>
-    export let message = 'default value';
+    // export let message = 'default value';
     export let showModal = false;
     export let isPromo = false;
 </script>
@@ -8,7 +8,8 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class = "backdrop" class:promo = {isPromo} on:click|self> <!-- 點方框之外的地方才會關閉 -->
         <div class = "modal">
-             <p>{message}</p>
+             <!-- <p>{message}</p> -->
+            <slot></slot> <!-- 插槽（slot）功能 -->
         </div>
     </div>
 {/if}
