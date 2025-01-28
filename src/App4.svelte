@@ -34,7 +34,7 @@
 <!-- <Modal message = "Hey, I am a prop value" isPromo={true} /> -->
 <Modal message = "hey there again" {showModal} on:click={toggleModal}/>
 <main>
-	<button on:click={toggleModal}>Open Modal</button>
+	<button on:click|once={toggleModal}>Open Modal</button> <!-- 只能啟動一次 -->
 	{#each people as person (person.id)} <!-- person代表 陣列裡的每一個人-->
 		<div>
 			<h4>{person.name}</h4>
